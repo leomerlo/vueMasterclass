@@ -1,18 +1,18 @@
-import PageHome from '@/components/PageHome.vue';
-import PageThreadShow from '@/components/PageThreadShow.vue';
-import PageNotFound from '@/components/PageNotFound.vue';
+import Home from '@/pages/Home.vue';
+import ThreadShow from '@/pages/ThreadShow.vue';
+import NotFound from '@/pages/NotFound.vue';
 import { createRouter, createWebHistory } from 'vue-router';
 import sourceData from '@/data.json';
 
 const routes = [
   {
     path: '/',
-    component: PageHome,
+    component: Home,
     name: 'Home',
   },
   {
     path: '/thread/:id',
-    component: PageThreadShow,
+    component: ThreadShow,
     name: 'ThreadShow',
     props: true,
     beforeEnter (to, from, next) {
@@ -33,7 +33,7 @@ const routes = [
   {
     path: '/:pathMatch(.*)*',
     name: 'NotFound',
-    component: PageNotFound,  
+    component: NotFound,  
   }
 ];
 
